@@ -9,7 +9,6 @@ import { fadeOut } from './animation'
 import { theme } from '../../theme'
 import { useNavigate } from 'react-router-dom'
 
-
 const LockerContainer = styled.div`
 	width: 250px;
 	height: 65px;
@@ -80,10 +79,7 @@ const Locker = () => {
 
 	useEffect(() => {
 		if (isLayerShow) {
-			setTimeout(() => {
-				console.log(123)
-				navigate('/about')
-			}, 1000)
+			setTimeout(() => navigate('/about'), 1000)
 		}
 	}, [isLayerShow])
 

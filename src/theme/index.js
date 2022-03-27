@@ -6,4 +6,5 @@ export const theme = {
   bodyRgba: '252, 246, 244',
   darkBodyRgba: '0,0,0',
   textRgba: '0,0,0',
+  marginHeight: '30px',
 }

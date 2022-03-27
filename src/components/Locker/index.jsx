@@ -7,6 +7,7 @@ import Hint from './Hint'
 import Layer from './Layer'
 import { fadeOut } from './animation'
 import { theme } from '../../theme'
+import { useNavigate } from 'react-router-dom'
 
 
 const LockerContainer = styled.div`
@@ -53,6 +54,8 @@ const Locker = () => {
 	const [isLayerShow, setIsLayerShow] = useState(false)
 	const [isSecondLayerShow, setIsSecondLayerShow] = useState(false)
 
+	const navigate = useNavigate()
+
 	const containerRef = useRef(null)
 
 	const { disableScroll, enableScroll } = useStopScroll()
@@ -77,6 +80,15 @@ const Locker = () => {
 		}
 	}, [scrollLeft, isDragging])
 
+	useEffect(() => {
+		if (isLayerShow) {
+			setTimeout(() => {
+				console.log(123)
+				navigate('/about')
+			}, 1000)
+		}
+	}, [isLayerShow])
+
 	const handleMouseDown = (e) => {
 		if (isEnd) return
 		e.stopPropagation()
@@ -98,7 +110,7 @@ const Locker = () => {
 			containerRef.current.scrollLeft = 0
 			setTimeout(() => setIsLayerShow(true), 1000)
 			setTimeout(() => setIsSecondLayerShow(true), 1200)
-		}
+			}
 	}
 
 	return (

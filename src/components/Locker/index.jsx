@@ -44,15 +44,13 @@ const Lock = styled.div`
 	transform: translateX(-190px);
 `
 
-let isEnd = false
-let lockIcon = faLock
-
 const Locker = () => {
 	const [isDragging, setIsDragging] = useState(false)
 	const [startX, setStartX] = useState('')
 	const [scrollLeft, setScrollLeft] = useState('')
 	const [isLayerShow, setIsLayerShow] = useState(false)
 	const [isSecondLayerShow, setIsSecondLayerShow] = useState(false)
+	const [isEnd, setIsEnd] = useState(false)
 
 	const navigate = useNavigate()
 
@@ -105,8 +103,7 @@ const Locker = () => {
 		if (!isDragging) return
 		setScrollLeft(190 - (e.pageX - startX))
 		if (190 - (e.pageX - startX) <= 0) {
-			isEnd = true
-			lockIcon = faLockOpen
+			setIsEnd(true)
 			containerRef.current.scrollLeft = 0
 			setTimeout(() => setIsLayerShow(true), 1000)
 			setTimeout(() => setIsSecondLayerShow(true), 1200)
@@ -124,7 +121,7 @@ const Locker = () => {
 						onMouseLeave={handleMouseLeave}
 						onMouseUp={handleMouseUp}
 					>
-						<FontAwesomeIcon icon={lockIcon} style={{ height: '50%' }} />
+						<FontAwesomeIcon icon={isEnd ? faLockOpen : faLock} style={{ height: '50%' }} />
 					</Lock>
 				</LockerTrack>
 			</LockerContainer>

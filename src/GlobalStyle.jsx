@@ -5,6 +5,7 @@ const GloablStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: #FCF6F4;
+    font-family: 'PT Sans Narrow', sans-serif;
   }
 
   *,

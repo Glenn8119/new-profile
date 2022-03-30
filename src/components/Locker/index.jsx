@@ -79,7 +79,7 @@ const Locker = () => {
 
 	useEffect(() => {
 		if (isLayerShow) {
-			setTimeout(() => navigate('/about'), 1000)
+			setTimeout(() => navigate('/'), 1000)
 		}
 	}, [isLayerShow])
 

@@ -12,7 +12,7 @@ const NavContainer = styled.nav`
 const Header = () => {
 	const location = useLocation()
 
-	if (location.pathname === '/') return null
+	if (location.pathname === '/index') return null
 	else
 		return (
 			<NavContainer>

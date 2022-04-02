@@ -6,6 +6,8 @@ export const theme = {
   bodyRgba: '252, 246, 244',
   darkBodyRgba: '0,0,0',
   textRgba: '0,0,0',
-  marginHeight: '30px',
+  headerHeight: '80px',
   hoverText: 'orangered',
+  asideWidth: '20%',
+  mainWidth: '80%',
 }

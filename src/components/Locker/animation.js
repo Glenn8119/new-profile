@@ -10,3 +10,27 @@ export const fadeOut = keyframes`
     transform: translateY(50%);
   }
 `
+
+export const backgroundAnimtaion = keyframes`
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+`
+
+export const jumpUP = keyframes`
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+`

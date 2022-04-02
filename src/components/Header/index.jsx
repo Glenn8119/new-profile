@@ -1,26 +1,42 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
+import { css } from 'styled-components'
+import { jumpUP } from '../Locker/animation'
 
-const NavContainer = styled.nav`
-  height: ${props => props.theme.marginHeight};
+const HeaderContainer = styled.nav`
+  width: 100%;
+  height: ${props => props.theme.headerHeight};
+	margin: 0 16px;
 	display: flex;
   position: fixed;
+	justify-content: center;
+	align-items: flex-end;
   top: 0;
-  left: 0;
+  left: 50%;
+	transform: translateX(-50%);
+	font-size: 2.5rem;
+	border-bottom: ${props => `1px solid rgba(${props.theme.textRgba}, .2)`};
+	`
+
+const AnimatedSpan = styled.span`
+	animation: ${props => css`.5s ${jumpUP} ease-in ${props.index/10}s`};
+	min-width: 10px;
 `
 
 const Header = () => {
 	const location = useLocation()
+	const headerContentArr = 'Glenn\'s  profolio'.split('')
+	
+	const renderContent = () => headerContentArr.map((item, index) => {
+		return <AnimatedSpan key={index} index={index}>{item}</AnimatedSpan>
+	})
 
 	if (location.pathname === '/index') return null
 	else
 		return (
-			<NavContainer>
-				<NavLink to='/about'>about</NavLink>
-				<NavLink to='/skills'>skills</NavLink>
-				<NavLink to='/articles'>articles</NavLink>
-				<NavLink to='/projects'>projects</NavLink>
-			</NavContainer>
+			<HeaderContainer>
+				{renderContent()}
+			</HeaderContainer>
 		)
 }
 

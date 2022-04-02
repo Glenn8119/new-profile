@@ -1,4 +1,4 @@
-export const options = {
+export const options = (isIndexPage) => ({
   autoPlay: true,
   background: {
     color: {
@@ -181,7 +181,7 @@ export const options = {
       }
     },
     color: {
-      value: "#ffffff",
+      value: `${isIndexPage ? '#fff' : '#a3a3a3'}`,
       animation: {
         h: {
           count: 0,
@@ -254,7 +254,7 @@ export const options = {
     links: {
       blink: false,
       color: {
-        value: "#ffffff"
+        value: `${isIndexPage ? '#ffffff' : '#b3b3b3'}`
       },
       consent: false,
       distance: 150,
@@ -507,4 +507,4 @@ export const options = {
   style: {},
   themes: [],
   zLayers: 100
-}
+})

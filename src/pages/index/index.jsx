@@ -5,7 +5,7 @@ import ParticlesComponent from '../../components/Particles'
 const IndexPage = () => {
 	return (
 		<>
-			<ParticlesComponent/>
+			<ParticlesComponent isIndexPage={true}/>
 			<Cover />
 		</>
 	)

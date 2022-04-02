@@ -3,25 +3,27 @@ import { NavLink, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledFooter = styled.aside`
-  width: ${(props) => (props.isHome ? '800px' : '25%')};
+  width: ${(props) => (props.isHome ? '800px' : `${props.theme.asideWidth}`)};
   height: ${(props) => (props.isHome ? '600px' : '40%')};
   display: flex;
   flex-direction: ${(props) => (props.isHome ? 'row' : 'column')};
   align-items: center;
   flex-wrap: ${(props) => (props.isHome ? 'wrap' : 'nowrap')};
   position: fixed;
-  top: 50%;
+  top: ${props => props.isHome ? `calc((100% + ${props.theme.headerHeight})/2)` : '50%'};
   left: ${(props) => (props.isHome ? '50%' : '0')};
   transform: ${(props) =>
     props.isHome ? 'translate(-50%, -50%)' : 'translateY(-50%)'};
-  transition: all 0.4s;
   transition-timing-function: linear;
-`
+  border-right: ${props => props.isHome ? 'none' : `2px solid rgba(${props.theme.textRgba}, .2)`};
+  transition: all 0.4s,
+  border-right 0.4s 0.4s;
+  `
 
 const StyledNavLink = styled.span`
   width: 50%;
   height: 30%;
-  font-size: 2rem;
+  font-size: ${props => props.isHome ? '4rem' : '2rem'};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,12 +57,12 @@ const StyledNavLink = styled.span`
 
   & > a:hover {
     background-position: 0% 0%;
-    font-size: 2.5rem;
+    transform: scale(1.5);
   }
 
   & > .active {
     background-position: 0% 0%;
-    font-size: 2.5rem;
+    transform: scale(1.5);
   }
 
   & > .active::before {
@@ -82,7 +84,7 @@ const Aside = () => {
   const renderList = () => {
     return pageList.map((item, index) => {
       return (
-        <StyledNavLink key={index}>
+        <StyledNavLink key={index} isHome={isHome}>
           <NavLink to={`/${item}`}>{item}</NavLink>
         </StyledNavLink>
       )

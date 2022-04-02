@@ -1,5 +1,7 @@
+import ParticlesComponent from '../../components/Particles'
+
 const Home = () => {
-  return <div>Home</div>
+  return <ParticlesComponent />
 }
 
 export default Home

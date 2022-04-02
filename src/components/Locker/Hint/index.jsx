@@ -1,18 +1,6 @@
 import styled from 'styled-components'
-import { keyframes, css } from 'styled-components'
-import { fadeOut } from '../animation'
-
-const backgroundAnimtaion = keyframes`
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-`
+import { css } from 'styled-components'
+import { fadeOut, backgroundAnimtaion } from '../animation'
 
 const StyledHint = styled.h1`
 	margin-bottom: 1rem;

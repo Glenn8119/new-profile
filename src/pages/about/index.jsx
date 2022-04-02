@@ -1,5 +1,15 @@
+import ContentContainer from '../../components/ContentContainer'
+import ParticlesComponent from '../../components/Particles'
+
 const About = () => {
-  return <div>about</div>
+  return (
+    <>
+      <ParticlesComponent />
+      <ContentContainer>
+        about
+      </ContentContainer>
+    </>
+  )
 }
 
 export default About

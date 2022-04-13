@@ -7,6 +7,7 @@ export const theme = {
   darkBodyRgba: '0,0,0',
   textRgba: '0,0,0',
   headerHeight: '80px',
+  footerHeight: '40px',
   hoverText: 'orangered',
   asideWidth: '20%',
   mainWidth: '80%',

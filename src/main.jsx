@@ -12,6 +12,7 @@ import Articles from './pages/articles'
 import Projects from './pages/projects'
 import Skills from './pages/skills'
 import Aside from './components/Aside'
+import Footer from './components/Footer'
 
 const App = () => {
 	return (
@@ -28,6 +29,7 @@ const App = () => {
 					<Route path='/skills' element={<Skills />} />
 				</Routes>
 				<Aside />
+				<Footer />
 			</ThemeProvider>
 		</>
 	)

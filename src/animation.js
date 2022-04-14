@@ -65,3 +65,18 @@ export const fadeInLeft = keyframes`
   transform: translateX(0);
 }
 `
+
+export const pop = keyframes`
+0% {
+  transform: scale(1);
+}
+5% {
+  transform: scale(1.2);
+}
+10% {
+  transform: scale(1);
+}
+100% {
+  transform: scale(1);
+}
+`

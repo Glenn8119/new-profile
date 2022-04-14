@@ -13,6 +13,10 @@ import Projects from './pages/projects'
 import Skills from './pages/skills'
 import Aside from './components/Aside'
 import Footer from './components/Footer'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faLinkedin, faFacebook, faGithub, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+
+library.add(faLinkedin, faFacebook, faGithub, faFontAwesome)
 
 const App = () => {
 	return (

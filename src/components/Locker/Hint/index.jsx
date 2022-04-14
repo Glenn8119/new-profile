@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { css } from 'styled-components'
-import { fadeOut, backgroundAnimtaion } from '../animation'
+import { fadeOut, backgroundAnimtaion } from '../../../animation'
 
 const StyledHint = styled.h1`
 	margin-bottom: 1rem;

@@ -2,7 +2,7 @@ import ContentContainer from '../../components/ContentContainer'
 import ParticlesComponent from '../../components/Particles'
 import styled from 'styled-components'
 import selfie from './images/selfie.jpeg'
-import { fadeInDown, fadeInUp } from '../../components/Locker/animation'
+import { fadeInDown, fadeInUp } from '../../animation'
 
 const AboutSection = styled.section`
 	width: 100%;

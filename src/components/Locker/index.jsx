@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 import useStopScroll from '../../hooks/useStopScroll'
 import Hint from './Hint'
 import Layer from './Layer'
-import { fadeOut } from './animation'
+import { fadeOut } from '../../animation'
 import { theme } from '../../theme'
 import { useNavigate } from 'react-router-dom'
 

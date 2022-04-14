@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { css } from 'styled-components'
-import { jumpUP } from '../Locker/animation'
+import { jumpUP } from '../../animation'
 
 const HeaderContainer = styled.nav`
   width: 100%;

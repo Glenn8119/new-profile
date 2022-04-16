@@ -19,6 +19,11 @@ const Divider = styled.div`
 	background-color: lightgray;
 `
 
+
+const handleOpen = (link) => {
+	window.open(link)
+}
+
 const Article = ({ title, time, date, preview, link, id }) => {
 	return (
 		<>

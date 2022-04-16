@@ -8,5 +8,6 @@ export const StyledBackground = styled.img`
 	left: 0;
 	opacity: 0.05;
 	object-fit: cover;
+	object-position: top;
 	z-index: -1;
 `

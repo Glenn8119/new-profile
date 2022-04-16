@@ -27,10 +27,6 @@ const ArticlesContainer = styled.div`
 	overflow: scroll;
 `
 
-const handleOpen = (link) => {
-	window.open(link)
-}
-
 const Articles = () => {
 	const article = articleData.map((article) => {
 		const { title, time, date, preview, link, id } = article

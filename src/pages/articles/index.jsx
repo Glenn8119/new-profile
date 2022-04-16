@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { expnad } from '../../animation'
 import articleBackground from '../../images/article-background.png'
 import { StyledBackground } from '../../styledComponents/background'
+import articleData from './articleData'
+import Article from './Article'
 
 const ArticleSection = styled.section`
 	display: flex;
@@ -19,18 +21,31 @@ const ArticleSection = styled.section`
 	transform-origin: bottom;
 `
 
-const ArticleContainer = styled.div`
-	margin-bottom: 3rem;
+const ArticlesContainer = styled.div`
+	padding: 1rem 3rem;
+	width: 100%;
+	overflow: scroll;
 `
 
+const handleOpen = (link) => {
+	window.open(link)
+}
+
 const Articles = () => {
-	const article = (
-		<ArticleContainer>
-			<div>setState 令人又愛又恨的非同步行為</div>
-			<div>2022/02/13</div>
-			<div>閱讀時間: 5min</div>
-		</ArticleContainer>
-	)
+	const article = articleData.map((article) => {
+		const { title, time, date, preview, link, id } = article
+
+		return (
+			<Article
+				key={id}
+				title={title}
+				time={time}
+				date={date}
+				preview={preview}
+				link={link}
+			/>
+		)
+	})
 
 	return (
 		<>
@@ -38,7 +53,7 @@ const Articles = () => {
 			<ContentContainer>
 				<ArticleSection>
 					<StyledBackground src={articleBackground} />
-					{article}
+					<ArticlesContainer>{article}</ArticlesContainer>
 				</ArticleSection>
 			</ContentContainer>
 		</>

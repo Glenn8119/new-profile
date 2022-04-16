@@ -74,7 +74,7 @@ const StyledNavLink = styled.span`
   }
 `
 
-const pageList = ['about', 'skills', 'articles', 'projects']
+const pageList = ['About', 'Skills', 'Articles', 'Projects']
 
 const Aside = () => {
   const [isHome, setIsHome] = useState(true)

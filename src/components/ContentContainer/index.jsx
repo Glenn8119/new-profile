@@ -8,6 +8,7 @@ const StyledContainer = styled.main`
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 2;
   width: ${props => `calc(${props.theme.mainWidth} - 2px)`};
   height: ${props => `calc(100vh - ${props.theme.headerHeight} - ${props.theme.footerHeight})`}
 `

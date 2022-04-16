@@ -11,4 +11,5 @@ export const theme = {
   hoverText: 'orangered',
   asideWidth: '20%',
   mainWidth: '80%',
+  shadow: '#d6d6d6',
 }

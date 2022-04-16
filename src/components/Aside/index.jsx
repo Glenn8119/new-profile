@@ -51,6 +51,10 @@ const StyledNavLink = styled.span`
     transition: all .4s;
   }
 
+  & > a:focus {
+    outline: none;
+  }
+
   & > a:hover::before {
     width: 100%;
   }

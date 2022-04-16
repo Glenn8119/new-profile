@@ -72,10 +72,10 @@ const Footer = () => {
 				<IconLink delay='2s' href='https://www.facebook.com/profile.php?id=100002582555256'>
 					<FontAwesomeIcon icon='fa-brands fa-facebook' size='2x' />
 				</IconLink>
-				<IconLink delay='2.5s' href='https://github.com/Glenn8119'>
+				<IconLink delay='2.2s' href='https://github.com/Glenn8119'>
 					<FontAwesomeIcon icon='fa-brands fa-github' size='2x' />
 				</IconLink>
-				<IconLink delay='3s' href='https://www.linkedin.com/in/%E9%9F%8B%E5%BB%B7-%E9%99%B3-1b368020a/'>
+				<IconLink delay='2.4s' href='https://www.linkedin.com/in/%E9%9F%8B%E5%BB%B7-%E9%99%B3-1b368020a/'>
 					<FontAwesomeIcon icon='fa-brands fa-linkedin' size='2x' />
 				</IconLink>
 			</IconList>

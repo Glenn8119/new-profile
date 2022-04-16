@@ -80,3 +80,16 @@ export const pop = keyframes`
   transform: scale(1);
 }
 `
+
+export const expnad = keyframes`
+0% {
+  transform: scale(0);
+}
+50% {
+  transform: scale(1);
+  width: 2%;
+}
+100% {
+  width: 95%;
+}
+`

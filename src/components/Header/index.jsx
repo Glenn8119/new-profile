@@ -6,7 +6,6 @@ import { jumpUP } from '../../animation'
 const HeaderContainer = styled.nav`
   width: 100%;
   height: ${props => props.theme.headerHeight};
-	margin: 0 16px;
 	display: flex;
   position: fixed;
 	justify-content: center;
@@ -15,7 +14,9 @@ const HeaderContainer = styled.nav`
   left: 50%;
 	transform: translateX(-50%);
 	font-size: 2.5rem;
-	border-bottom: ${props => `1px solid rgba(${props.theme.textRgba}, .2)`};
+	box-shadow: ${props => `0 4px 16px 0 ${props.theme.shadow}`};
+	background-color: ${props => props.theme.body};
+	z-index: 2;
 	`
 
 const AnimatedSpan = styled.span`

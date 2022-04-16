@@ -14,6 +14,7 @@ import tailwind from '../../images/logos/tailwind.png'
 import typescript from '../../images/logos/typescript.png'
 import vue from '../../images/logos/vue.png'
 import redux from '../../images/logos/redux.png'
+import { StyledBackground } from '../../styledComponents/background'
 
 const SkillSection = styled.section`
 	display: flex;
@@ -25,7 +26,6 @@ const SkillSection = styled.section`
 	border-radius: 1rem;
 	box-shadow: ${(props) => `0 4px 16px 0 ${props.theme.shadow}`};
 	background-color: ${(props) => props.theme.body};
-	background-size: cover;
 	animation: ${expnad} 1s forwards;
 	transform-origin: bottom;
 `
@@ -36,17 +36,6 @@ const GridContainer = styled.div`
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 1rem;
-`
-
-const StyledBackground = styled.img`
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0.05;
-	object-fit: cover;
-	z-index: -1;
 `
 
 const LogoCard = styled.div`

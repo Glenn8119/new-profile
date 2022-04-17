@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { fadeInLeft, pop } from '../../animation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useLocation } from 'react-router-dom'
 
 const StyledFooter = styled.footer`
 	position: fixed;
@@ -65,6 +66,8 @@ const IconLink = styled.a`
 `
 
 const Footer = () => {
+	const location = useLocation()
+	if (location.pathname === '/index') return null
 	return (
 		<StyledFooter>
 			<StyledLine />

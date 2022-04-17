@@ -30,9 +30,9 @@ const ArticlesContainer = styled.div`
 `
 
 const Articles = () => {
-	const article = articleData.map((article) => {
+	const article = articleData.map((article, index) => {
 		const { title, time, date, preview, link, id } = article
-
+		const isLastIndex = articleData.length - 1 === index
 		return (
 			<Article
 				key={id}
@@ -41,6 +41,7 @@ const Articles = () => {
 				date={date}
 				preview={preview}
 				link={link}
+				isLastIndex={isLastIndex}
 			/>
 		)
 	})

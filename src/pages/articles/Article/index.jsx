@@ -24,7 +24,7 @@ const handleOpen = (link) => {
 	window.open(link)
 }
 
-const Article = ({ title, time, date, preview, link, id }) => {
+const Article = ({ title, time, date, preview, link, isLastIndex }) => {
 	return (
 		<>
 			<ArticleContainer>
@@ -52,7 +52,7 @@ const Article = ({ title, time, date, preview, link, id }) => {
 						繼續閱讀
 					</span>
 				</div>
-				<Divider />
+				{!isLastIndex ? <Divider /> : null}
 			</ArticleContainer>
 		</>
 	)

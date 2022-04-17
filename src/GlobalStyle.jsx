@@ -7,12 +7,13 @@ const GloablStyle = createGlobalStyle`
     background-color: #FCF6F4;
     font-family: 'PT Sans Narrow', sans-serif;
   }
-
+  
   *,
   *::before,
   *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 `
 export default GloablStyle

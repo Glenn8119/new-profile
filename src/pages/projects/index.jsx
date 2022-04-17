@@ -3,7 +3,7 @@ import ParticlesComponent from '../../components/Particles'
 import styled from 'styled-components'
 import { expnad } from '../../animation'
 import { StyledBackground } from '../../styledComponents/background'
-import articleBackground from '../../images/projects-background.png'
+import projectsBackground from '../../images/backgrounds/projects-background.png'
 
 const ProjectsSection = styled.section`
 	display: flex;
@@ -25,7 +25,7 @@ const Projects = () => {
 			<ParticlesComponent />
 			<ContentContainer>
 				<ProjectsSection>
-					<StyledBackground src={articleBackground}/>
+					<StyledBackground src={projectsBackground}/>
 					Projects
 				</ProjectsSection>
 			</ContentContainer>

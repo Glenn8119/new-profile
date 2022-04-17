@@ -1,8 +1,8 @@
 import ContentContainer from '../../components/ContentContainer'
 import ParticlesComponent from '../../components/Particles'
 import styled from 'styled-components'
-import { expnad } from '../../animation'
-import articleBackground from '../../images/article-background.png'
+import { expnad, fadeIn } from '../../animation'
+import articleBackground from '../../images/backgrounds/article-background.png'
 import { StyledBackground } from '../../styledComponents/background'
 import articleData from './articleData'
 import Article from './Article'
@@ -25,6 +25,8 @@ const ArticlesContainer = styled.div`
 	padding: 1rem 3rem;
 	width: 100%;
 	overflow: scroll;
+	opacity: 0;
+	animation: ${fadeIn} .4s 1s forwards;
 `
 
 const Articles = () => {

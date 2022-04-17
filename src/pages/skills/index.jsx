@@ -1,8 +1,8 @@
 import ContentContainer from '../../components/ContentContainer'
 import ParticlesComponent from '../../components/Particles'
 import styled from 'styled-components'
-import skillBackground from '../../images/skill-background.png'
-import { expnad } from '../../animation'
+import skillBackground from '../../images/backgrounds/skill-background.png'
+import { expnad, fadeInUp } from '../../animation'
 import react from '../../images/logos/react.svg'
 import css from '../../images/logos/css.svg'
 import html from '../../images/logos/html.svg'
@@ -48,7 +48,7 @@ const LogoCard = styled.div`
 `
 
 const Logo = styled.img`
-	width: 120px;
+	width: 100px;
 	margin-bottom: 1rem;
 `
 

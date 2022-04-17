@@ -35,6 +35,15 @@ export const jumpUP = keyframes`
   }
 `
 
+export const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
 export const fadeInUp = keyframes`
   0% {
     opacity: 0;

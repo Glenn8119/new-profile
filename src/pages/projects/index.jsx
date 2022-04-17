@@ -35,7 +35,7 @@ const DiscriptionContainer = styled.div`
 
 const ProjectName = styled.h2`
 	font-size: 2rem;
-	margin-bottom: 1rem;
+	margin-bottom: 3rem;
 `
 
 const MainContent = styled.main`

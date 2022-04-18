@@ -144,7 +144,7 @@ const projectData = [
 		name: '高鐵秘書',
 		pic: timeTable,
 		desctiption:
-			'SPA with React Router, and carousel with pure CSS. With API from PTX, you can simulate the process of booking high speed rail tickets, it records what you’ve booked via local storage and calculates the time left of the next rail.',
+			'SPA with React Router, and carousel, RWD with pure CSS. With API from PTX, you can simulate the process of booking high speed rail tickets, it records what you’ve booked via local storage and calculates the time left of the next rail.',
 		tools: 'HTML, CSS, Reactjs, Redux',
 		link: 'https://vigilant-fermi-c2ee21.netlify.app/#/',
 	},

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ContentContainer from '../../components/ContentContainer'
 import ParticlesComponent from '../../components/Particles'
 import styled from 'styled-components'
-import { expnad } from '../../animation'
+import { expnad, fadeIn } from '../../animation'
 import { StyledBackground } from '../../styledComponents/background'
 import projectsBackground from '../../images/backgrounds/projects-background.png'
 import timeTable from '../../images/projects/timetable.png'
@@ -34,14 +34,19 @@ const DiscriptionContainer = styled.div`
 `
 
 const ProjectName = styled.h2`
+	min-height: 45px;
+	opacity: 0;
 	font-size: 2rem;
 	margin-bottom: 3rem;
+	animation: ${fadeIn} 0.4s 1s forwards;
 `
 
 const MainContent = styled.main`
+	opacity: 0;
 	height: 100%;
 	display: flex;
 	justify-content: start;
+	animation: ${fadeIn} 0.4s 1s forwards;
 `
 
 const ProjectPic = styled.img`
@@ -51,11 +56,13 @@ const ProjectPic = styled.img`
 	object-position: center;
 	margin-right: auto;
 	box-shadow: ${(props) => `0 4px 16px 0 ${props.theme.shadow}`};
+	cursor: pointer;
 `
 
 const DescriptionArea = styled.div`
 	width: 400px;
 	height: 50%;
+	margin-bottom: auto;
 `
 
 const DescriptionTitle = styled.h2`
@@ -83,10 +90,12 @@ const PrevButton = styled.div`
 	left: -1rem;
 	transform: translate(-50%, -50%);
 	border-radius: 999px;
-	background: ${props => props.theme.body};
+	background: ${(props) => props.theme.body};
 	box-shadow: ${(props) => `0 4px 16px 0 ${props.theme.shadow}`};
 	cursor: pointer;
-	transition: all .2s;
+	opacity: 0;
+	transition: all 0.2s;
+	animation: ${fadeIn} 0.4s 1s forwards;
 
 	&::before {
 		display: block;
@@ -111,10 +120,12 @@ const NextButton = styled.div`
 	right: -4rem;
 	transform: translate(-50%, -50%);
 	border-radius: 999px;
-	background: ${props => props.theme.body};
+	background: ${(props) => props.theme.body};
 	box-shadow: ${(props) => `0 4px 16px 0 ${props.theme.shadow}`};
 	cursor: pointer;
-	transition: all .2s;
+	opacity: 0;
+	transition: all 0.2s;
+	animation: ${fadeIn} 0.4s 1s forwards;
 
 	&::before {
 		display: block;
@@ -129,23 +140,48 @@ const NextButton = styled.div`
 `
 
 const projectData = [
-	{ name: '高鐵秘書', pic: timeTable, desctiption: '很高鐵的秘書', tools: 'CSS', link: 'https://vigilant-fermi-c2ee21.netlify.app/#/'},
-	{ name: 'Todo-List', pic: todoList, desctiption: '很todo的list', tools: 'ddraggg', link: 'https://vigilant-fermi-c2ee21.netlify.app/#/'},
-	{ name: 'Recipe', pic: recipe, desctiption: '很re的cipe', tools: 'apaiiiapi', link: 'https://vigilant-fermi-c2ee21.netlify.app/#/'},
+	{
+		name: '高鐵秘書',
+		pic: timeTable,
+		desctiption:
+			'SPA with React Router, and carousel with pure CSS. With API from PTX, you can simulate the process of booking high speed rail tickets, it records what you’ve booked via local storage and calculates the time left of the next rail.',
+		tools: 'HTML, CSS, Reactjs, Redux',
+		link: 'https://vigilant-fermi-c2ee21.netlify.app/#/',
+	},
+	{
+		name: 'Todo-List',
+		pic: todoList,
+		desctiption:
+			'It provides two days of todo-list, using OOP with vanilla Javascript and lets users to be able to modify, delete todos by dragging todo elements.',
+		tools: 'HTML, CSS, Javascript',
+		link: 'https://fervent-varahamihira-2f4c2e.netlify.app/',
+	},
+	{
+		name: 'Recipe',
+		pic: recipe,
+		desctiption:
+			'It achieves search autocomplete by sending request to outer API, with debounce to the input to lower the frequency of sending requests.',
+		tools: 'HTML, CSS, Bootstrap, Reactjs',
+		link: 'https://practical-pare-ecba46.netlify.app/',
+	},
 ]
+
+const handleLink = (link) => {
+	window.open(link)
+}
 
 const Projects = () => {
 	const [currentIndex, setCurrentIndex] = useState(0)
 
 	const handlePrevClick = () => {
 		if (currentIndex > 0) {
-			setCurrentIndex(prevState => prevState - 1)
+			setCurrentIndex((prevState) => prevState - 1)
 		}
 	}
 
 	const handleNextClick = () => {
 		if (currentIndex < projectData.length - 1) {
-			setCurrentIndex(prevState => prevState + 1)
+			setCurrentIndex((prevState) => prevState + 1)
 		}
 	}
 
@@ -156,15 +192,20 @@ const Projects = () => {
 			<ParticlesComponent />
 			<ContentContainer>
 				<ProjectsSection>
-					<PrevButton onClick={handlePrevClick}/>
+					<PrevButton onClick={handlePrevClick} />
 					<StyledBackground src={projectsBackground} />
 					<ProjectName>{currentProject.name}</ProjectName>
 					<MainContent>
-						<ProjectPic src={currentProject.pic} />
+						<ProjectPic
+							src={currentProject.pic}
+							onClick={() => handleLink(currentProject.link)}
+						/>
 						<DiscriptionContainer>
 							<DescriptionArea>
 								<DescriptionTitle>Description</DescriptionTitle>
-								<p>{currentProject.desctiption}</p>
+								<p style={{ fontSize: '1.5rem' }}>
+									{currentProject.desctiption}
+								</p>
 							</DescriptionArea>
 							<SkillArea>
 								<SkillTitle>Tools</SkillTitle>
@@ -172,7 +213,7 @@ const Projects = () => {
 							</SkillArea>
 						</DiscriptionContainer>
 					</MainContent>
-					<NextButton onClick={handleNextClick}/>
+					<NextButton onClick={handleNextClick} />
 				</ProjectsSection>
 			</ContentContainer>
 		</>

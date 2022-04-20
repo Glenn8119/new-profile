@@ -50,8 +50,8 @@ const MainContent = styled.main`
 `
 
 const ProjectPic = styled.img`
-	width: 400px;
-	height: 400px;
+	width: 300px;
+	height: 300px;
 	object-fit: cover;
 	object-position: center;
 	margin-right: auto;

@@ -50,11 +50,8 @@ const Locker = () => {
 	const [isLayerShow, setIsLayerShow] = useState(false)
 	const [isSecondLayerShow, setIsSecondLayerShow] = useState(false)
 	const [isEnd, setIsEnd] = useState(false)
-
 	const navigate = useNavigate()
-
 	const containerRef = useRef(null)
-
 	const { disableScroll, enableScroll } = useStopScroll()
 
 	useEffect(() => {
@@ -62,10 +59,6 @@ const Locker = () => {
 
 		return enableScroll
 	}, [])
-
-	useEffect(() => {
-		if (containerRef) containerRef.current.scrollLeft = 190
-	}, [containerRef])
 
 	useEffect(() => {
 		if (!isEnd) {
@@ -109,14 +102,14 @@ const Locker = () => {
 	return (
 		<>
 			<Hint isEnd={isEnd}/>
-			<LockerContainer ref={containerRef} className='test' isEnd={isEnd}>
-				<LockerTrack>
-					<Lock
-						onMouseDown={(e) => handleMouseDown(e)}
-						onMouseMove={(e) => handleMouseMove(e)}
-						onMouseLeave={handleMouseLeave}
-						onMouseUp={handleMouseUp}
-					>
+			<LockerContainer ref={containerRef} isEnd={isEnd}>
+				<LockerTrack
+					onMouseDown={(e) => handleMouseDown(e)}
+					onMouseMove={(e) => handleMouseMove(e)}
+					onMouseLeave={handleMouseLeave}
+					onMouseUp={handleMouseUp}
+				>
+					<Lock>
 						<FontAwesomeIcon icon={isEnd ? faLockOpen : faLock} style={{ height: '50%' }} />
 					</Lock>
 				</LockerTrack>

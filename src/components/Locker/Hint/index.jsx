@@ -20,7 +20,7 @@ const StyledHint = styled.h1`
 `
 
 const Hint = ({ isEnd }) => {
-	return <StyledHint isEnd={isEnd}>緩慢滑動解鎖</StyledHint>
+	return <StyledHint isEnd={isEnd}>滑動解鎖</StyledHint>
 }
 
 export default Hint
